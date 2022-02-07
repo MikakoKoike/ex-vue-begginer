@@ -1,9 +1,11 @@
 <template>
   <div class="test">
     <div>名前：{{ name }}</div>
-    <div>年齢：{{ age }}</div>
+    <div>年齢：{{ age }}歳</div>
     <div>10年後の年齢：{{ age + 10 }}歳</div>
-    <div>趣味：{{ hobbies }}</div>
+    趣味：
+    <span v-for="hobby of hobbies" v-bind:key="hobby">{{ hobby }}&nbsp;</span>
+
     <div><a v-bind:href="url">ラクスパートナーズ株式会社</a></div>
     <div><img v-bind:src="imgUrl" /></div>
   </div>
@@ -17,7 +19,7 @@ export default class XXXComponent extends Vue {
   private age = 31;
   private hobbies = ["スイム", "バイク", "ラン"];
   private url = "https://www.rakus-partners.co.jp/";
-  private imgUrl = "img/hegdhog/jfif";
+  private imgUrl = "img/hegdhog.jfif";
 }
 </script>
 
@@ -25,5 +27,6 @@ export default class XXXComponent extends Vue {
 .test {
   text-align: left;
   border: 4px solid;
+  display: inline-block;
 }
 </style>
