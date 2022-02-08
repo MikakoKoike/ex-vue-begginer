@@ -21,7 +21,7 @@ export default class XXXComponent extends Vue {
     return this.num1 + this.num2 + this.num3;
   }
   get includingTax(): number {
-    return this.subTotal + this.subTotal * this.tax;
+    return Math.floor(this.subTotal + this.subTotal * this.tax);
   }
 }
 </script>
